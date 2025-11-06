@@ -117,7 +117,7 @@ background-position: 760px;
   border-radius: 50px;
   transition: 0.3s;
 }
-.circle:hover {
+#circle:hover {
   background-color: rgb(59, 59, 231);
   width: 60px;
   height: 60px;
@@ -128,8 +128,8 @@ background-position: 760px;
 }
 
 
-/* Стили для самого модального окна (контейнер затемнения) */
-.modal {
+
+/* .modal {
     display: none;
     position: fixed;
     z-index: 10;
@@ -228,4 +228,4 @@ background-position: 760px;
   transform: scale(1.03);
   cursor: pointer;
   box-shadow: 4px 4px 14px rgb(208, 208, 255);
-}
+} */
