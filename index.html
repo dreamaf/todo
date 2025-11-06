@@ -33,12 +33,10 @@
           <div class="lupa"></div>
         </div>
 
-        <div class="button1">
-          <a style="margin-left: 15px; justify-content: space-between"
-            >ALL⠀⠀⠀▾</a
-          >
-        </div>
-        <div class="button2"></div>
+        <button id="button1">
+          <a style="margin-left: 15px; justify-content: space-between">ALL⠀▾</a>
+        </button>
+        <button id="button2"></button>
       </div>
 
       <div class="notes">
@@ -58,9 +56,36 @@
         </div>
       </div>
 
-      <div class="circle"></div>
+      <button class="circle"></button>
 
-      <div class="hz"></div>
+      
+        <div id="modal" class="modal">
+          <div class="modal-content">
+        
+            <div class="newnote">NEW NOTE</div>
+       
+    <input
+            class="inputtt"
+            type="text"
+            style="
+              border-color: rgb(59, 59, 231);
+              border-radius: 5px;
+              font-size: 20px;
+              height: 35px;
+              width: 490px;
+              margin-top: 20px;
+            "
+            placeholder="Input your note..."
+          />
+
+            <div class="buttons">
+              <button id="cancel">CANCEL</button>
+              <button id="apply">APPLY</button>
+            </div>
+          </div>
     </div>
+
+      <script src="index.js"></script>
+    
   </body>
 </html>

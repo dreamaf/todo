@@ -1,10 +1,13 @@
+
+
 .main {
-  background-color: rgb(255, 255, 255);
   width: 1000px;
   height: 1000px;
   margin-left: 25%;
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.8s ease, color 0.5s ease; 
 }
+
 .parent {
   margin-top: 50px;
   display: flex;
@@ -19,7 +22,15 @@ background-position: 760px;
      background-size: 30px;
     background-repeat: no-repeat;
 }
-.button1 {
+
+.inputtt {
+
+
+     background-size: 30px;
+    background-repeat: no-repeat;
+}
+
+#button1 {
   background-color: rgb(59, 59, 231);
   width: 100px;
   height: 40px;
@@ -27,8 +38,10 @@ background-position: 760px;
   border-radius: 5px;
   align-content: center;
   transition: 0.5s;
+  font-size: 20px;
+    border: none;
 }
-.button2 {
+#button2 {
   background-image: url("moon.png");
       background-size: cover;
     background-repeat: no-repeat;
@@ -38,6 +51,7 @@ background-position: 760px;
   color: white;
   border-radius: 5px;
   transition: 0.5s;
+    border: none;
 }
 .button1:hover {
   background-color: rgb(59, 59, 231);
@@ -91,7 +105,7 @@ background-position: 760px;
   background-repeat: no-repeat;
   cursor: pointer;
 }
-.circle {
+#circle {
   background-image: url("plus.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -109,6 +123,109 @@ background-position: 760px;
   height: 60px;
   border-radius: 50px;
   transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 4px 4px 14px rgb(208, 208, 255);
+}
+
+
+/* Стили для самого модального окна (контейнер затемнения) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    position: relative;
+
+    transform: scale(0.9);
+    transition: transform 0.3s ease-out;
+}
+
+
+.modal.show {
+    display: flex;
+    transform: scale(1);
+}
+
+
+
+
+.newnote {
+  display: flex;
+  font-size: 28px;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.buttons {
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#cancel {
+  width: 110px;
+  height: 40px;
+  background-color: white;
+  border: 2px solid rgb(59, 59, 231);
+  border-radius: 5px;
+  color:  rgb(59, 59, 231);
+  font-weight: bold;
+  font-size: 17px;
+    transition: 0.4s;
+}
+#cancel:hover {
+  width: 110px;
+  height: 40px;
+  background-color: rgb(59, 59, 231);
+  border: 2px solid rgb(59, 59, 231);
+  border-radius: 5px;
+  color:  rgb(253, 253, 253);
+  font-weight: bold;
+  font-size: 17px;
+  transform: scale(1.03);
+  cursor: pointer;
+  box-shadow: 4px 4px 14px rgb(208, 208, 255);
+}
+
+#apply {
+  width: 110px;
+  height: 40px;
+  background-color: rgb(59, 59, 231);
+   border: 2px solid rgb(59, 59, 231);
+  border-radius: 5px;
+  color:  rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 17px;
+    transition: 0.4s;
+}
+#apply:hover {
+  width: 110px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);;
+  border-radius: 5px;
+   border: 2px solid rgb(59, 59, 231);
+  color:  rgb(59, 59, 231);
+  font-weight: bold;
+  font-size: 17px;
+  transform: scale(1.03);
   cursor: pointer;
   box-shadow: 4px 4px 14px rgb(208, 208, 255);
 }
