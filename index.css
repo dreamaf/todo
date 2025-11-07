@@ -128,8 +128,7 @@ background-position: 760px;
 }
 
 
-
-/* .modal {
+.modal {
     display: none;
     position: fixed;
     z-index: 10;
@@ -158,8 +157,11 @@ background-position: 760px;
     transition: transform 0.3s ease-out;
 }
 
+.modal{
+  display: none;
+}
 
-.modal.show {
+.show {
     display: flex;
     transform: scale(1);
 }
@@ -228,4 +230,4 @@ background-position: 760px;
   transform: scale(1.03);
   cursor: pointer;
   box-shadow: 4px 4px 14px rgb(208, 208, 255);
-} */
+} 

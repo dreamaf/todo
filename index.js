@@ -12,28 +12,29 @@ button.addEventListener("click", function() {
 });
 
 
-// // Получаем элементы модального окна и кнопок
-// const modal = document.getElementById("modal");
-// const circle =document.getElementById("circle");
-// const cancel= document.getElementById("cancel");
+// Получаем элементы модального окна и кнопок
+const modal = document.getElementById("modal");
+const circle =document.getElementById("circle");
+const cancel= document.getElementById("cancel");
 
-// // Функция открытия модального окна
-// circle.addEventListener("click", () => {
-//     // modal.style.display = "flex"; // Если не используете CSS-класс show/hide
-//     modal.classList.add('show');
-// });
+// Функция открытия модального окна
+circle.addEventListener("click", () => {
+    // modal.style.display = "flex"; // Если не используете CSS-класс show/hide
+    modal.classList.add('show');
+});
 
-// // Функция закрытия модального окна при клике на крестик
-// cancel.addEventListener("click", () => {
-//     // modal.style.display = "none";
-//     modal.classList.remove('show');
-// });
+// Функция закрытия модального окна при клике на крестик
+cancel.addEventListener("click", () => {
+    // modal.style.display = "none"
+    modal.classList.remove('show');
+    
+});
 
-// // Функция закрытия модального окна при клике вне его области
-// window.addEventListener("click", (event) => {
-//     if (event.target == modal) {
-//         // modal.style.display = "none";
-//         modal.classList.remove('show');
-//     }
-// });
+// Функция закрытия модального окна при клике вне его области
+window.addEventListener("click", (event) => {
+    if (event.target == modal) {
+        // modal.style.display = "none";
+        modal.classList.remove('show');
+    }
+});
 
