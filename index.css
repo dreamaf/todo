@@ -116,6 +116,7 @@ background-position: 760px;
   height: 60px;
   border-radius: 50px;
   transition: 0.3s;
+  border: none;
 }
 #circle:hover {
   background-color: rgb(59, 59, 231);
@@ -124,7 +125,8 @@ background-position: 760px;
   border-radius: 50px;
   transform: scale(1.05);
   cursor: pointer;
-  box-shadow: 4px 4px 14px rgb(208, 208, 255);
+
+    border: none;
 }
 
 
@@ -143,8 +145,8 @@ background-position: 760px;
 }
 
 
-.modal-content {
-    background-color: #fff;
+#modalcontent {
+
     padding: 30px;
     border: 1px solid #888;
     width: 80%; 
@@ -157,6 +159,7 @@ background-position: 760px;
     transition: transform 0.3s ease-out;
 }
 
+
 .modal{
   display: none;
 }
@@ -166,8 +169,13 @@ background-position: 760px;
     transform: scale(1);
 }
 
+.dark {
+  background-color: black;
+}
 
-
+.light{
+  background-color: rgb(255, 255, 255);
+}
 
 .newnote {
   display: flex;
@@ -176,7 +184,7 @@ background-position: 760px;
   justify-content: center;
 }
 
-.buttons {
+#buttons {
   margin-top: 150px;
   display: flex;
   justify-content: space-between;
@@ -204,7 +212,7 @@ background-position: 760px;
   font-size: 17px;
   transform: scale(1.03);
   cursor: pointer;
-  box-shadow: 4px 4px 14px rgb(208, 208, 255);
+
 }
 
 #apply {
@@ -229,5 +237,9 @@ background-position: 760px;
   font-size: 17px;
   transform: scale(1.03);
   cursor: pointer;
-  box-shadow: 4px 4px 14px rgb(208, 208, 255);
+  
 } 
+
+#my-input {
+    
+}
