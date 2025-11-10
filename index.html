@@ -18,7 +18,7 @@
       <div class="parent">
         <div class="search">
           <input
-            class="inputt"
+            id="inputt"
             type="text"
             style="
               border-color: rgb(59, 59, 231);
@@ -29,6 +29,8 @@
             "
             placeholder="Search note..."
           />
+<!-- <div id="results"></div> -->
+
 
           <div class="lupa"></div>
         </div>
@@ -41,7 +43,8 @@
 
       <div class="notes">
         <div class="note">
-          <div class="cub"></div>
+          <div class="cub"> <input type="checkbox" id="checkbox" name="checkbox1"></div>
+         
           <div class="text">Default</div>
         </div>
         
@@ -77,8 +80,18 @@
           </div>
         </div>
 
+<div id="nf" class="hidden">
+    <div id="nf2"  >
+ <img src="notfound.png" 
+         alt="Ничего не найдено" 
+         id="notfound"
+         style=" width: 200px;
+  height: 200px;">
+ <p id="empty">Empty...</p>
+  </div>
+</div>
 
-      <script src="index.js"></script>
+ <script src="index.js"></script>
     
   </body>
 </html>

@@ -16,19 +16,51 @@
 
   justify-content: space-between;
 }
-.inputt {
+#inputt {
 background-image: url("lupka.png");
 background-position: 760px;
      background-size: 30px;
     background-repeat: no-repeat;
 }
 
+.hidden {
+    display: none;
+}
+.item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
 .inputtt {
-
-
      background-size: 30px;
     background-repeat: no-repeat;
 }
+
+#nf2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 400px;
+  justify-content: center;
+align-items: center;
+}
+ .hidden {
+            display: none;
+        }
+    
+        #notfound {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            display: block; /* Помогает в выравнивании, если нужно */
+        }
+        #empty {
+          font-weight: bold;
+            margin-top: 5px;
+           
+            font-size: 20px;
+            width: 100px;
+        }
 
 #button1 {
   background-color: rgb(59, 59, 231);
@@ -86,25 +118,21 @@ background-position: 760px;
   width: 600px;
   font-weight: bold;
 }
+input[type="checkbox"] {
+  transform: scale(2.5);
+  accent-color:rgb(59, 59, 231);
+ border: 2px solid rgb(59, 59, 231);
+  background-color: transparent;
+}
+
 .cub {
-  border: 1px solid rgb(59, 59, 231);
+  border: none;
   width: 30px;
   height: 30px;
   border-radius: 3px;
   transition: 0.3s;
 }
-.cub:hover {
-  border: 1px solid rgb(59, 59, 231);
-  background-color: rgb(59, 59, 231);
-  width: 30px;
-  height: 30px;
-  border-radius: 3px;
-  transform: scale(1.09);
-  background-image: url("yes.png");
-    background-size: cover;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
+
 #circle {
   background-image: url("plus.png");
   background-size: cover;

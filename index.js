@@ -87,7 +87,7 @@ apply.addEventListener("click", function() {
     const newNoteHTML = `
         <hr style="border-color: rgb(199, 199, 255); width: 700px" />
         <div class="note">
-          <div class="cub"></div>
+        <div class="cub"> <input type="checkbox" id="checkbox" name="checkbox1"></div>
           <div class="text">${noteText}</div>
         </div>
     `;
@@ -99,3 +99,19 @@ apply.addEventListener("click", function() {
 
 
 // NOTE #${noteCount}
+
+
+
+
+        const inputt = document.getElementById('inputt');
+          const nf = document.getElementById('nf');
+
+
+        inputt.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          
+            this.value = '';
+            nf.classList.remove('hidden');
+        }
+    });
+
