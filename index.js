@@ -14,26 +14,47 @@ const buttons = document.getElementById("buttons");
 
 
 //тема
+
 button.addEventListener("click", function () {
-  if (document.body.style.backgroundColor === "black" || document.body.style.backgroundColor === "rgb(0, 0, 0)") {
+    // Просто переключаем класс 'dark-mode' на body
+    document.body.classList.toggle('dark-mode');
 
-    document.body.style.backgroundColor = "white";
-    document.body.style.color = 'black';
-    modalcontent.classList.remove('dark');
-    modalcontent.classList.add('light');
-    button2.classList.remove('sun');
-    button2.classList.add('moon');
-
-  } else {
-    document.body.style.backgroundColor = "black";
-    document.body.style.color = 'white';
-    modalcontent.classList.add('dark');
-    modalcontent.classList.remove('light');
-    button2.classList.add('sun');
-    button2.classList.remove('moon');
-    ;
-  }
+    // Остальная ваша логика переключения классов для других элементов остается прежней
+    if (document.body.classList.contains('dark-mode')) {
+        // Логика для темного режима (когда класс dark-mode добавлен)
+        modalcontent.classList.remove('light');
+        modalcontent.classList.add('dark');
+        button2.classList.remove('moon');
+        button2.classList.add('sun');
+    } else {
+        // Логика для светлого режима (когда класс dark-mode удален)
+        modalcontent.classList.remove('dark');
+        modalcontent.classList.add('light');
+        button2.classList.remove('sun');
+        button2.classList.add('moon');
+    }
 });
+
+// button.addEventListener("click", function () {
+//   if (document.body.style.backgroundColor === "black" || document.body.style.backgroundColor === "rgb(0, 0, 0)") {
+
+//     document.body.style.backgroundColor = "white";
+//     document.body.style.color = 'black';
+//     modalcontent.classList.remove('dark');
+//     modalcontent.classList.add('light');
+//     button2.classList.remove('sun');
+//     button2.classList.add('moon');
+
+//   } else {
+//     document.body.style.backgroundColor = "black";
+//     document.body.style.color = 'white';
+//     modalcontent.classList.add('dark');
+//     modalcontent.classList.remove('light');
+//     button2.classList.add('sun');
+//     button2.classList.remove('moon');
+//     ;
+//   }
+// });
 
 
 //модальное окно
@@ -102,6 +123,8 @@ apply.addEventListener("click", function () {
   notesContainer.insertAdjacentHTML('beforeend', newNoteHTML);
 
   cancel_F()
+
+  
 });
 
 
