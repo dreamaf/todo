@@ -35,23 +35,32 @@
           <div class="lupa"></div>
         </div>
 
-        <button id="button1">
+        <!-- <button id="button1">
           <a style="margin-left: 15px; justify-content: space-between">ALL⠀▾</a>
-        </button>
+        </button> -->
+
+        <select name="all" id="selectall">
+          <option value="ALL" id="all">ALL</option>
+           <option value="CHECKED" id="checked">CHECKED</option>
+            <option value="NOT CHECKED" id="notchecked">NOT CHECKED</option>
+        </select>
         <button id="button2"></button>
       </div>
 
+
+      <div id="main">
       <div class="notes">
+          <!-- <div class="forhr">
         <div class="note">
-          <div class="cub"> <input type="checkbox" id="checkbox" name="checkbox1"></div>
-         
-          <div class="text">Default</div>
+          <input type="checkbox" id="checkbox" name="checkbox1">
+            <label for="checkbox"><span>default</span></label>
         </div>
-        
+            <hr style="border-color: rgb(199, 199, 255); width: 700px" />
+        </div> -->
       </div>
 
       <button id="circle"></button>
-
+</div>
  
         <div id="modal" class="modal">
           
@@ -80,6 +89,10 @@
           </div>
         </div>
 
+
+
+
+
 <div id="nf" class="hidden">
     <div id="nf2"  >
  <img src="notfound.png" 
@@ -93,5 +106,7 @@
 
  <script src="index.js"></script>
     
+
+ 
   </body>
 </html>
