@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 const button = document.getElementById("button2");
 const modalcontent = document.getElementById("modalcontent");
 const buttons = document.getElementById("buttons");
-
-
+const deleteBtn = document.getElementById("delete-btn");
+const editBtn = document.getElementById("edit-btn");
 
 //тема
 
@@ -19,15 +19,13 @@ button.addEventListener("click", function () {
     // Просто переключаем класс 'dark-mode' на body
     document.body.classList.toggle('dark-mode');
 
-    // Остальная ваша логика переключения классов для других элементов остается прежней
+
     if (document.body.classList.contains('dark-mode')) {
-        // Логика для темного режима (когда класс dark-mode добавлен)
         modalcontent.classList.remove('light');
         modalcontent.classList.add('dark');
         button2.classList.remove('moon');
         button2.classList.add('sun');
     } else {
-        // Логика для светлого режима (когда класс dark-mode удален)
         modalcontent.classList.remove('dark');
         modalcontent.classList.add('light');
         button2.classList.remove('sun');
@@ -113,6 +111,10 @@ apply.addEventListener("click", function () {
         <div class="note">
        <input type="checkbox" id="checkbox" name="checkbox1">
           <label for="checkbox"><span>${noteText}</span></label>
+          <div class="noteactions">
+              <button class="editbtn" id="editbtn" aria-label="Edit note"><svg class="editsvg"></svg></button>
+              <button class="deletebtn" id="deletebtn" aria-label="Delete note"><svg class="deletesvg"></svg></button>
+          </div>
         </div>
             <hr style="border-color: rgb(199, 199, 255); width: 700px" />
         </div>
@@ -305,3 +307,47 @@ function filterNotes() {
 selectAll.addEventListener('change', filterNotes);
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Получаем основной контейнер заметок
+    const notesContainer = document.querySelector('.notes');
+
+    // 2. Добавляем единый слушатель событий на весь контейнер
+    notesContainer.addEventListener('click', (event) => {
+
+        // --- Логика Удаления Заметки ---
+        // Проверяем, была ли нажата кнопка с классом 'delete-btn' или её изображение внутри
+        const deleteButton = event.target.closest('.deletebtn');
+        if (deleteButton) {
+            // Находим ближайший родительский элемент, который оборачивает заметку и <hr>
+            const fullNoteWrapper = deleteButton.closest('.forhr');
+            if (fullNoteWrapper) {
+                // Удаляем весь этот элемент из DOM
+                fullNoteWrapper.remove();
+                console.log('Заметка удалена.');
+            }
+        }
+
+        // --- Логика Редактирования Заметки ---
+        // Проверяем, была ли нажата кнопка с классом 'edit-btn' или её изображение внутри
+        const editButton = event.target.closest('.editbtn');
+        if (editButton) {
+            // Находим родительский контейнер заметки (.note)
+            const noteElement = editButton.closest('.note');
+            // Находим элемент <span> внутри <label>, который содержит текст
+            const noteTextSpan = noteElement.querySelector('label span');
+
+            if (noteTextSpan) {
+                // Запрашиваем новый текст
+                const newText = prompt('Введите новый текст для заметки:', noteTextSpan.textContent);
+
+                // Если пользователь не отменил ввод и ввел текст
+                if (newText !== null && newText.trim() !== '') {
+                    noteTextSpan.textContent = newText.trim();
+                    console.log('Заметка отредактирована.');
+                } else if (newText !== null) {
+                    alert('Текст заметки не может быть пустым.');
+                }
+            }
+        }
+    });
+});

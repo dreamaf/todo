@@ -141,7 +141,7 @@ body.dark-mode #inputtt {
   align-content: center;
   margin-left: 15%;
   height: 50px;
-  width: 600px;
+  width: 700px;
   font-weight: bold;
 }
 input[type="checkbox"] {
@@ -343,4 +343,71 @@ body.dark-mode #apply:hover {
   
 }
 
+.noteactions {
+ 
+    visibility: hidden; 
+    opacity: 0;      
+    display: flex;      
+    justify-content: end;
+    margin-left: 470px;
+    gap: 10px;
+    transition: all 0.3s ease; 
+}
 
+.note:hover .noteactions {
+    visibility: visible; 
+    opacity: 1;          
+}
+
+.editbtn {
+  width: 30px;
+height: 30px;
+      border: 0px solid white;
+  background-color: transparent;
+  transition: 0.3s;  
+}
+
+.deletebtn {
+width: 30px;
+height: 30px;
+      border: 0px solid white;
+       background-color: transparent;
+ transition: 0.3s;
+}
+
+.editbtn:hover {
+  width: 30px;
+height: 30px;
+      border: 0px solid white;
+   transform: scale(1.09);
+}
+
+.deletebtn:hover {
+width: 30px;
+height: 30px;
+      border: 0px solid white;
+      stroke:rgb(59, 59, 231);
+fill:rgb(59, 59, 231);
+  transform: scale(1.09); 
+}
+
+.editsvg {
+  width: 27px;
+height: 27px;
+background-size: cover;
+  background-image: url("edit.svg");
+}
+.editsvg:hover {
+    stroke:rgb(59, 59, 231);
+fill:rgb(59, 59, 231);
+}
+.deletesvg {
+  width: 30px;
+height: 30px;
+background-size: cover;
+  background-image: url("delete.svg");
+}
+.delete:hover {
+    stroke:rgb(59, 59, 231);
+fill:rgb(59, 59, 231);
+}
