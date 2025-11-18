@@ -349,7 +349,7 @@ body.dark-mode #apply:hover {
     opacity: 0;      
     display: flex;      
     justify-content: end;
-    margin-left: 470px;
+    margin-left: 450px;
     gap: 10px;
     transition: all 0.3s ease; 
 }

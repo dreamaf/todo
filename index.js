@@ -306,7 +306,7 @@ function filterNotes() {
 
 selectAll.addEventListener('change', filterNotes);
 
-
+// удаление
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Получаем основной контейнер заметок
     const notesContainer = document.querySelector('.notes');
@@ -318,16 +318,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // Проверяем, была ли нажата кнопка с классом 'delete-btn' или её изображение внутри
         const deleteButton = event.target.closest('.deletebtn');
         if (deleteButton) {
-            // Находим ближайший родительский элемент, который оборачивает заметку и <hr>
-            const fullNoteWrapper = deleteButton.closest('.forhr');
-            if (fullNoteWrapper) {
-                // Удаляем весь этот элемент из DOM
-                fullNoteWrapper.remove();
-                console.log('Заметка удалена.');
+              const isConfirmed = confirm('Вы уверены, что хотите удалить эту заметку?');
+              if (!isConfirmed) {
+        return; 
+    }
+
+    // Если пользователь нажал "ОК" (isConfirmed будет true), продолжаем удаление
+    const fullNoteWrapper = deleteButton.closest('.forhr');
+    if (fullNoteWrapper) {
+        // Удаляем весь этот элемент из DOM
+        fullNoteWrapper.remove();
+        console.log('Заметка удалена.');
             }
         }
 
-        // --- Логика Редактирования Заметки ---
+        //эдит
+
+
         // Проверяем, была ли нажата кнопка с классом 'edit-btn' или её изображение внутри
         const editButton = event.target.closest('.editbtn');
         if (editButton) {
