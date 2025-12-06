@@ -29,15 +29,8 @@
             "
             placeholder="Search note..."
           />
-<!-- <div id="results"></div> -->
-
-
           <div class="lupa"></div>
         </div>
-
-        <!-- <button id="button1">
-          <a style="margin-left: 15px; justify-content: space-between">ALL⠀▾</a>
-        </button> -->
 
         <select name="all" id="selectall">
           <option value="ALL" id="all">ALL</option>
@@ -47,28 +40,18 @@
         <button id="button2"></button>
       </div>
 
-
       <div id="main">
-      <div class="notes">
-          <!-- <div class="forhr">
-        <div class="note">
-          <input type="checkbox" id="checkbox" name="checkbox1">
-            <label for="checkbox"><span>default</span></label>
-        </div>
-            <hr style="border-color: rgb(199, 199, 255); width: 700px" />
-        </div> -->
-      </div>
-
-      <button id="circle"></button>
-</div>
- 
-        <div id="modal" class="modal">
+          <div class="notes">
           
-          <div id="modalcontent">
-        
-            <div class="newnote">NEW NOTE</div>
-       
-    <input
+             <div id="container_tasks"></div>
+          </div>
+          <button id="circle"></button>
+      </div>
+ 
+      <div id="modal" class="modal">
+        <div id="modalcontent">
+          <div class="newnote">NEW NOTE</div>
+          <input
             id="inputtt"
             type="text"
             style="
@@ -82,31 +65,85 @@
             placeholder="Input your note..."
           />
 
-            <div id="buttons">
-              <button id="cancel">CANCEL</button>
-              <button id="apply">APPLY</button>
-            </div>
+          <div id="buttons">
+            <button id="cancel">CANCEL</button>
+            <button id="apply">APPLY</button>
           </div>
         </div>
+      </div>
 
-
-
-
-
-<div id="nf" class="hidden">
-    <div id="nf2"  >
- <img src="notfound.png" 
-         alt="Ничего не найдено" 
-         id="notfound"
-         style=" width: 200px;
-  height: 200px;">
- <p id="empty">Empty...</p>
-  </div>
-</div>
-
- <script src="index.js"></script>
+      <div id="nf" class="hidden">
+          <div id="nf2"  >
+           <img src="notfound.png" 
+                 alt="Ничего не найдено" 
+                 id="notfound"
+                 style=" width: 200px; height: 200px;">
+           <p id="empty">Empty...</p>
+          </div>
+      </div>
+    </div>
     
 
- 
+    <script src="index.js"></script>
+    <script>
+        function displayTask() {
+            let container = document.getElementById("container_tasks");
+
+          
+
+            container.innerHTML = "";
+            fetch("server/getTask.php")
+               .then((response) => response.json())
+                .then((resp) => {
+                  resp.forEach((task) => {
+                    let new_p = document.createElement("p");
+                    new_p.innerText = task;
+                    container.appendChild(new_p);
+                });
+            })
+      
+        }
+
+        //сохранениE задачи
+        function saveTask(taskText) {
+            let fd = new FormData();
+            fd.append("task_text", taskText); 
+
+            fetch("server/index.php", {
+                method: "post",
+                body: fd,
+            })
+            .then((response) => response.text())
+            .then((resp) => {
+                console.log(resp); 
+                if (resp === "OK") {
+                    displayTask();
+                }
+            })
+            .catch(error => console.error('Error adding task:', error));
+        }
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+      
+        displayTask();
+
+        const applyButton = document.getElementById("apply");
+        const noteInputModal = document.getElementById("inputtt");
+
+        if (applyButton && noteInputModal) {
+            applyButton.addEventListener("click", function () {
+                const taskText = noteInputModal.value.trim();
+                if (taskText) {
+                    saveTask(taskText);
+                    noteInputModal.value = '';
+
+              
+                } 
+                
+            });
+        }
+      });
+    </script>
   </body>
 </html>

@@ -53,14 +53,12 @@ align-items: center;
     
         #notfound {
             max-width: 100%;
-            height: auto;
             margin-top: 10px;
             display: block;
         }
         #empty {
           font-weight: bold;
             margin-top: 5px;
-           
             font-size: 20px;
             width: 100px;
         }
