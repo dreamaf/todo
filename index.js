@@ -16,7 +16,7 @@ const editBtn = document.getElementById("edit-btn");
 //тема
 
 button.addEventListener("click", function () {
-    // Просто переключаем класс 'dark-mode' на body
+   
     document.body.classList.toggle('dark-mode');
 
 
@@ -61,9 +61,9 @@ const modal = document.getElementById("modal");
 const circle = document.getElementById("circle");
 const cancel = document.getElementById("cancel");
 
-// Функция открытия модального окна
+// открытиe модального окна
 circle.addEventListener("click", () => {
-  // modal.style.display = "flex"; // Если не используете CSS-класс show/hide
+
   modal.classList.add('show');
 });
 
@@ -90,12 +90,10 @@ const apply = document.getElementById("apply");
 const inputtt = document.getElementById("inputtt");
 
 
-let noteCount = 1;
+
 
 
 apply.addEventListener("click", function () {
-  // Увеличиваем счетчик заметок
-  // noteCount++;
   const noteText = inputtt.value;
 
      
@@ -314,8 +312,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Добавляем единый слушатель событий на весь контейнер
     notesContainer.addEventListener('click', (event) => {
 
-        // --- Логика Удаления Заметки ---
-        // Проверяем, была ли нажата кнопка с классом 'delete-btn' или её изображение внутри
+      -
+        // проверяем, была ли нажата кнопка с классом 'delete-btn' или её изображение внутри
         const deleteButton = event.target.closest('.deletebtn');
         if (deleteButton) {
               const isConfirmed = confirm('Вы уверены, что хотите удалить эту заметку?');
@@ -323,10 +321,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return; 
     }
 
-    // Если пользователь нажал "ОК" (isConfirmed будет true), продолжаем удаление
+    // удаление при нажатии ок
     const fullNoteWrapper = deleteButton.closest('.forhr');
     if (fullNoteWrapper) {
-        // Удаляем весь этот элемент из DOM
+     
         fullNoteWrapper.remove();
         console.log('Заметка удалена.');
             }

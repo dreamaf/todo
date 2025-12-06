@@ -86,23 +86,6 @@
 
     <script src="index.js"></script>
     <script>
-        function displayTask() {
-            let container = document.getElementById("container_tasks");
-
-          
-
-            container.innerHTML = "";
-            fetch("server/getTask.php")
-               .then((response) => response.json())
-                .then((resp) => {
-                  resp.forEach((task) => {
-                    let new_p = document.createElement("p");
-                    new_p.innerText = task;
-                    container.appendChild(new_p);
-                });
-            })
-      
-        }
 
         //сохранениE задачи
         function saveTask(taskText) {
@@ -116,17 +99,14 @@
             .then((response) => response.text())
             .then((resp) => {
                 console.log(resp); 
-                if (resp === "OK") {
-                    displayTask();
-                }
+            
             })
-            .catch(error => console.error('Error adding task:', error));
+      
         }
 
 
       document.addEventListener("DOMContentLoaded", function () {
       
-        displayTask();
 
         const applyButton = document.getElementById("apply");
         const noteInputModal = document.getElementById("inputtt");
